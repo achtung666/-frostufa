@@ -13,8 +13,8 @@ const choices = business ? [
 const arrow = '<span aria-hidden="true">↗</span>';
 const logoPath = business ? 'assets/logo-dark.png' : 'assets/logo-light.png';
 const logoDimensions = business ? 'width="1245" height="895"' : 'width="1254" height="1254"';
-const logoCaption = business ? 'Ремонт холодильного<br>оборудования для бизнеса' : 'Ремонт холодильников<br>на дому';
-const brandArtwork = `<span class="logo-lockup"><span class="logo-art"><img class="brand-image" src="${logoPath}" ${logoDimensions} alt="FROST UFA" fetchpriority="high"></span><span class="logo-caption">${logoCaption}</span></span>`;
+const logoCaption = business ? 'Ремонт холодильного<br>оборудования для бизнеса' : 'Срочный ремонт<br>холодильников на дому';
+const brandArtwork = `<span class="logo-lockup"><span class="logo-emblem" aria-hidden="true"><img class="brand-image" src="${logoPath}" ${logoDimensions} alt=""></span><span class="logo-name"><img class="brand-image" src="${logoPath}" ${logoDimensions} alt="FROST UFA"></span><span class="logo-caption"><span>${logoCaption}</span></span></span>`;
 document.getElementById('app').innerHTML = `
 <header class="header wrap">
  <a href="${business ? 'business.html' : 'index.html'}" class="brand brand-artwork" aria-label="FROST UFA — главная">${brandArtwork}</a>
