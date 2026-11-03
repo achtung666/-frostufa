@@ -28,10 +28,14 @@ body[data-mode=business] .logo-emblem .brand-image{width:126.5%;left:-13.25%;top
 .logo-name{height:calc(var(--logo-width)*.132);margin-top:calc(var(--logo-width)*.04)}
 .logo-name .brand-image{width:109.5%;left:-5.1%;top:-561%}
 body[data-mode=business] .logo-name .brand-image{width:113%;height:calc(var(--logo-width)*1.027);left:-7.2%;top:-608%}
-.logo-caption{display:grid;grid-template-columns:calc(var(--logo-width)*.065) minmax(0,1fr) calc(var(--logo-width)*.065);gap:calc(var(--logo-width)*.025);align-items:center;margin-top:calc(var(--logo-width)*.025);color:var(--ink);font-size:calc(var(--logo-width)*.0535);font-weight:900;font-style:italic;line-height:1.25;letter-spacing:-.15px;text-transform:uppercase;text-align:center;min-height:calc(var(--logo-width)*.134)}
-.logo-caption::before,.logo-caption::after{content:'';display:block;height:calc(var(--logo-width)*.026);background:linear-gradient(100deg,#ed6200 5%,#ff7a00 32%,#ffe092 50%,#ff9f24 65%,#ff7a00 90%);background-size:300% 100%;animation:logo-stripe-shimmer 4.8s ease-in-out infinite;clip-path:polygon(0 50%,100% 0,100% 100%)}
-.logo-caption::after{clip-path:polygon(0 0,100% 50%,0 100%);animation-direction:reverse}
-@keyframes logo-stripe-shimmer{0%,20%{background-position:100% 50%}70%,100%{background-position:0 50%}}
+.logo-caption{display:block;position:relative;margin-top:calc(var(--logo-width)*.025);color:var(--ink);font-size:calc(var(--logo-width)*.0535);font-weight:900;font-style:italic;line-height:1.25;letter-spacing:-.15px;text-transform:uppercase;text-align:center;min-height:calc(var(--logo-width)*.134)}
+.logo-caption::before,.logo-caption::after{content:'';display:block;position:absolute;top:calc(50% - var(--logo-width)*.016);width:calc(var(--logo-width)*.22);height:calc(var(--logo-width)*.032);background:linear-gradient(90deg,#f36b00,#ff8c08 45%,#ffe1a2 80%,#ff9b22);border-radius:100% 4px 4px 100%;animation:brand-orange-pulse 3.2s ease-in-out infinite;pointer-events:none}
+.logo-caption::before{right:calc(100% + var(--logo-width)*.035)}
+.logo-caption::after{left:calc(100% + var(--logo-width)*.035);border-radius:4px 100% 100% 4px;background:linear-gradient(90deg,#ff9b22,#ffe1a2 20%,#ff8c08 55%,#f36b00)}
+.logo-emblem::after{content:'';position:absolute;left:50%;top:59%;width:calc(var(--logo-width)*.25);height:calc(var(--logo-width)*.25);transform:translate(-50%,-50%);background:radial-gradient(circle,#fff4d4 0 4%,#ffd47f 8%,#ff921acc 19%,#ff7a0066 36%,#ff7a0000 70%);animation:brand-orange-pulse 3.2s ease-in-out infinite;pointer-events:none}
+body[data-mode=business] .logo-emblem::after{top:49.5%}
+@keyframes brand-orange-pulse{0%,100%{opacity:.25;filter:brightness(.8) drop-shadow(0 0 0 #ff7a0000)}45%,55%{opacity:1;filter:brightness(1.5) drop-shadow(0 0 6px #ff7a00cc)}}
+.brand-artwork{justify-content:center}
 .footer-logo{width:150px;height:auto}.footer-logo .logo-lockup{--logo-width:150px}
 .door-symbol .logo-lockup{--logo-width:104px}
 .footer-team-link{display:inline-block;margin-top:9px;color:var(--ink);text-decoration:underline;text-underline-offset:4px}
@@ -40,7 +44,8 @@ body[data-mode=business] .logo-name .brand-image{width:113%;height:calc(var(--lo
 
 /* Commercial display cabinet: fixed compressor canopy, full-height glazing and grille. */
 .commercial-fridge{width:260px;height:430px;border-radius:4px;background:linear-gradient(90deg,#606b73,#c2ccd1 8%,#89959c 90%,#404b53);box-shadow:13px 4px 0 #3b4650,18px 12px 20px #0004}
-.commercial-fridge .inside{inset:53px 0 36px;border:10px solid #6c7e8a;border-radius:0;background:linear-gradient(100deg,#c7e3ed,#e8f6fa 48%,#a8c5d1);box-shadow:inset 0 0 18px #345b7166;padding:9px 9px 5px}
+.commercial-fridge .inside{inset:53px 0 36px;border:10px solid #6c7e8a;border-radius:0;background:linear-gradient(100deg,#c7e3ed,#e8f6fa 48%,#a8c5d1);box-shadow:inset 0 0 18px #345b7166;padding:9px 9px 5px;visibility:hidden}
+.commercial-fridge.is-open .inside{visibility:visible}
 .commercial-fridge .inner-light{position:absolute;left:3px;top:5px;bottom:5px;width:3px;height:auto;margin:0;background:#ecffff;box-shadow:0 0 9px 3px #c7f7ff}
 .commercial-fridge .inside-title{font-size:9px;margin:1px 0 10px}
 .commercial-fridge .shelf-menu{gap:8px}
@@ -54,11 +59,11 @@ body[data-mode=business] .logo-name .brand-image{width:113%;height:calc(var(--lo
 .cabinet-plinth{position:absolute;inset:auto 0 0;height:36px;background:linear-gradient(100deg,#798a96,#afbdc5,#687e8b);display:flex;align-items:center;justify-content:space-between;padding:6px 11px}
 .vent-grille{width:105px;height:21px;background:repeating-linear-gradient(0deg,#263b47 0 2px,#91a4af 2px 4px);border:1px solid #617984}.cabinet-label{font-size:5px;letter-spacing:.5px;color:#233843;font-weight:700;text-transform:uppercase}
 .cabinet-foot{position:absolute;bottom:-9px;width:21px;height:9px;background:#1f2c35;border-radius:0 0 2px 2px}.foot-left{left:13px}.foot-right{right:13px}
-.commercial-fridge .fridge-door{inset:53px 0 36px;border:11px solid #637783;border-radius:0;background:linear-gradient(115deg,#d9f9ff17,#66a0bd22 65%,#e1f8ff33);box-shadow:inset 0 0 0 2px #c5dbe5,3px 4px 7px #12303f77;transform-origin:1% 50%;overflow:hidden}
-.commercial-fridge.is-open .fridge-door{transform:rotateY(-109deg);background:linear-gradient(115deg,#bedfeb44,#4f738b55)}
+.commercial-fridge .fridge-door{inset:53px 0 36px;border:11px solid #637783;border-radius:0;background:linear-gradient(115deg,#13232d,#243c48 55%,#10222d);box-shadow:inset 0 0 0 2px #c5dbe5,3px 4px 7px #12303f77;transform-origin:1% 50%;overflow:hidden}
+.commercial-fridge.is-open .fridge-door{transform:rotateY(-109deg);background:linear-gradient(115deg,#13232ded,#243c48e6)}
 .glass-reflection{position:absolute;inset:0;background:linear-gradient(115deg,transparent 12%,#fff2 12.5% 24%,transparent 24.5% 63%,#fff1 63.5% 70%,transparent 70.5%);border:1px solid #d8efff88}
 .commercial-handle{position:absolute;right:6px;top:23%;width:9px;height:55%;background:linear-gradient(90deg,#506977,#edf7fa 50%,#708f9f);border-radius:4px;box-shadow:3px 2px 4px #142f4266}
-.glass-caption{position:absolute;bottom:6px;left:10px;font-size:5px;letter-spacing:.35px;text-transform:uppercase;color:#223d4c}
+.glass-caption{position:absolute;bottom:6px;left:10px;font-size:5px;letter-spacing:.35px;text-transform:uppercase;color:#d2e4ec}
 
 .team-section{padding-block:90px;display:grid;grid-template-columns:1fr 1fr;gap:75px;border-bottom:1px solid var(--line)}
 .team-intro>p{font-size:12px;line-height:1.9;color:var(--muted);max-width:470px;margin:18px 0}
@@ -72,4 +77,4 @@ body[data-mode=business] .logo-name .brand-image{width:113%;height:calc(var(--lo
 @media(max-width:1100px) and (min-width:761px){.header{grid-template-columns:180px minmax(0,1fr) 150px;gap:12px}.team-section{gap:35px}.team-practice{padding:24px}.experience-mark strong{font-size:54px}.experience-mark p{margin-left:5px;font-size:8px}}
 @media(max-width:760px){.header{grid-template-columns:1fr;height:auto;min-height:0;justify-items:center;padding-block:12px 18px;gap:14px}.header .brand-artwork{margin:0;justify-content:center;width:180px;height:120px}.brand-image{height:116px;max-width:180px}.header .audiences{width:100%;order:initial}.header-cta{display:none}.commercial-fridge{width:245px;height:421px;transform:translateX(22px)}.commercial-fridge .shelf-menu button{min-height:48px}.team-section{grid-template-columns:1fr;gap:28px;padding-block:55px}.team-intro>p.team-lead{font-size:14px}.team-intro>p{font-size:12px}.team-practice{padding:25px}.experience-mark strong{font-size:62px}.team-principles h3{font-size:13px}.team-principles p{font-size:11px}.footer-logo{width:125px;height:100px}.team-link{margin-top:6px}}
 @media(max-width:760px){.header .brand-artwork{height:auto}.footer-logo{height:auto;width:140px}.footer-logo .logo-lockup{--logo-width:140px}}
-@media(prefers-reduced-motion:reduce){.logo-caption::before,.logo-caption::after{animation:none;background-position:50% 50%}}
+@media(prefers-reduced-motion:reduce){.logo-caption::before,.logo-caption::after,.logo-emblem::after{animation:none;opacity:.8;filter:drop-shadow(0 0 3px #ff7a0066)}}
