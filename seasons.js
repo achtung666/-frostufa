@@ -22,6 +22,7 @@
     }
   }
   document.addEventListener('visibilitychange', () => {
+    document.body.classList?.toggle('page-paused', document.hidden);
     document.querySelector('.seasonal-layer')?.classList.toggle('season-paused', document.hidden);
   });
 })();
