@@ -1,7 +1,8 @@
 // Discourage casual saving within the gallery; this is not access control.
 (() => {
   document.querySelectorAll('.document-thumbnail').forEach(preview => {
-    preview.addEventListener('contextmenu', event => event.preventDefault());
-    preview.addEventListener('dragstart', event => event.preventDefault());
+    ['contextmenu', 'dragstart', 'selectstart', 'copy', 'cut'].forEach(type => {
+      preview.addEventListener(type, event => event.preventDefault());
+    });
   });
 })();

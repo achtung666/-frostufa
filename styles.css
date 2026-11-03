@@ -173,3 +173,5 @@ body[data-mode=business] .map-rivers{stroke:#6c93a333}body[data-mode=business] .
 .document-card{margin:0}.document-thumbnail{-webkit-touch-callout:none;user-select:none;-webkit-user-select:none}.document-thumbnail img{pointer-events:none;-webkit-user-drag:none}.document-card:hover .document-thumbnail{border-color:var(--line)}
 /* Stop decorative work in hidden tabs. */
 .page-paused *, .page-paused *::before, .page-paused *::after{animation-play-state:paused!important}
+/* Keep document images out of browser printouts and Save as PDF. */
+@media print{.master-documents .document-thumbnail{visibility:hidden}}
