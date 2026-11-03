@@ -18,6 +18,9 @@ body[data-mode=home] :is(.brand-image,.footer-logo img,.door-symbol img){mix-ble
 /* Keep the blend backdrop inside the app's stacking context. */
 body[data-mode=home] :is(.brand-artwork,.footer-logo) :is(.logo-emblem,.logo-name){background:var(--bg);isolation:isolate}
 body[data-mode=home] .door-symbol img{box-shadow:none;border-radius:0}
+/* Blend the complete decal against the metallic door, not inside clipped image layers. */
+body[data-mode=home] .door-symbol{mix-blend-mode:multiply}
+body[data-mode=home] .door-symbol .brand-image{mix-blend-mode:normal}
 .header{height:190px}
 .brand-artwork{height:auto}
 .brand .logo-lockup{font-size:inherit;letter-spacing:normal;line-height:1}
